@@ -1,5 +1,5 @@
 
-import Select from './components/Select';
+import SelectMonolith from './components/SelectMonolith';
 
 import chase from './assets/chase.jpg';
 import gabriel from './assets/gabriel.jpg';
@@ -42,7 +42,7 @@ function App() {
       alignItems: 'center',
       minHeight: '100vh'
     }}>
-      <Select items={people} />
+      <SelectMonolith items={people} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../styles/Select.css';
 
-const Select = ({ items }) => {
+const SelectMonolith = ({ items }) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
     const selectRef = React.useRef(null);
@@ -96,4 +96,4 @@ const Select = ({ items }) => {
     );
 };
 
-export default Select;
+export default SelectMonolith;
