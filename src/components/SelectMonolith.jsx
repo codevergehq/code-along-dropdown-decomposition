@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/Select.css';
+import '../styles/SelectMonolith.css';
 
 const SelectMonolith = ({ items }) => {
     const [isOpen, setIsOpen] = React.useState(false);
