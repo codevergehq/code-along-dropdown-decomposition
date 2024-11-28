@@ -1,16 +1,16 @@
 import React from 'react';
 
-import '../styles/Dropdown.css';
+import '../styles/Select.css';
 
-const Dropdown = ({ items }) => {
+const Select = ({ items }) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
-    const dropdownRef = React.useRef(null);
+    const selectRef = React.useRef(null);
 
-    // Click outside handler 
+    // Click outside handler
     React.useEffect(() => {
         const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (selectRef.current && !selectRef.current.contains(event.target)) {
                 setIsOpen(false);
             }
         };
@@ -57,56 +57,34 @@ const Dropdown = ({ items }) => {
     }, [isOpen, items, selectedItem]);
 
     return (
-        <div
-            className="dropdown-container"
-            ref={dropdownRef}
-        >
+        <div className="select-container" ref={selectRef}>
             {/* Trigger/Selected Item Display */}
-            <div
-                className="dropdown-trigger"
-                onClick={() => setIsOpen(!isOpen)}
-            >
+            <div className="select-trigger" onClick={() => setIsOpen(!isOpen)}>
                 {selectedItem ? (
-                    <div
-                        className="selected-item"
-                    >
-                        <img
-                            src={selectedItem.image}
-                            alt={selectedItem.name}
-                        />
+                    <div className="selected-item">
+                        <img src={selectedItem.image} alt={selectedItem.name} />
                         <span>{selectedItem.name}</span>
                     </div>
                 ) : (
                     <span>Select a person</span>
                 )}
-                <span
-                    className="dropdown-arrow"
-                >
-                    ▼
-                </span>
+                <span className="select-arrow">▼</span>
             </div>
 
-            {/* Dropdown Menu */}
+            {/* Select Menu */}
             {isOpen && (
-                <div
-                    className="dropdown-menu"
-                >
+                <div className="select-menu">
                     {items.map((item) => (
                         <div
                             key={item.id}
-                            className="dropdown-item"
+                            className="select-item"
                             onClick={() => {
                                 setSelectedItem(item);
                                 setIsOpen(false);
                             }}
                         >
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                            />
-                            <div
-                                className="item-details"
-                            >
+                            <img src={item.image} alt={item.name} />
+                            <div className="item-details">
                                 <span>{item.name}</span>
                                 <span>{item.role}</span>
                             </div>
@@ -118,4 +96,4 @@ const Dropdown = ({ items }) => {
     );
 };
 
-export default Dropdown;
+export default Select;

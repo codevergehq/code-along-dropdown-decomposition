@@ -1,5 +1,5 @@
 
-import Dropdown from './components/Dropdown';
+import Select from './components/Select';
 
 import chase from './assets/chase.jpg';
 import gabriel from './assets/gabriel.jpg';
@@ -42,7 +42,7 @@ function App() {
       alignItems: 'center',
       minHeight: '100vh'
     }}>
-      <Dropdown items={people} />
+      <Select items={people} />
     </div>
   );
 }
