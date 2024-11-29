@@ -1,0 +1,83 @@
+.personSelector {
+    width: 300px;
+}
+
+.selectorTrigger {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personPreview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.personAvatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.personInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.triggerArrow {
+    transition: transform 0.2s ease;
+}
+
+.triggerArrow.expanded {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.personOption {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.personOption:hover {
+    background-color: #f5f5f5;
+}
+
+.personOption.selected {
+    background-color: #f0f0f0;
+}
+
+.personOptionAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.personOptionInfo div:first-child {
+    font-weight: bold;
+}
+
+.personOptionInfo div:last-child {
+    font-size: 0.9em;
+    color: #666;
+}

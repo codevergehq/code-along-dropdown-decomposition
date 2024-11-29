@@ -35,7 +35,7 @@ const SelectProvider = ({ children }) => {
 function Select({
     value = null,
     onValueChange = (value) => {},
-    open = false,
+    open = null,
     onOpenChange = (open) => {},
     className = "",
     children,
@@ -69,9 +69,8 @@ function SelectInner({ value, onValueChange, open, onOpenChange, className, chil
     }, [currentValue, state.value]);
 
     React.useEffect(() => {
-        if (open !== undefined) {
-            toggleSelect();
-        }
+        if (state.isOpen === open || open === undefined) return;
+        toggleSelect();
     }, [open]);
 
     // Update Parent
