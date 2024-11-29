@@ -6,6 +6,7 @@ import gabriel from './assets/gabriel.jpg';
 import jurica from './assets/jurica.jpg';
 import michael from './assets/michael.jpg';
 
+import styles from './styles/App.module.css';
 
 function App() {
   const people = [
@@ -36,14 +37,9 @@ function App() {
   ];
 
   return (
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center',
-      minHeight: '100vh'
-    }}>
+    <main className={styles.app}>
       <SelectMonolith items={people} />
-    </div>
+    </main>
   );
 }
 
