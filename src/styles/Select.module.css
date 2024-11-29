@@ -1,0 +1,18 @@
+.selectContainer {
+    position: relative;
+}
+
+.selectTrigger {
+    cursor: pointer;
+}
+
+.selectContent {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+}
+
+.selectItem {
+    cursor: pointer;
+}
