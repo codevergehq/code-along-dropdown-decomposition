@@ -1,9 +1,9 @@
-.select-container {
+.selectContainer {
   position: relative;
   width: 300px;
 }
 
-.select-trigger {
+.selectTrigger {
   border: 1px solid #ccc;
   padding: 12px;
   border-radius: 4px;
@@ -14,33 +14,33 @@
   align-items: center;
 }
 
-.selected-item {
+.selectedItem {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.selected-item img {
+.selectedItem img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.item-details {
+.itemDetails {
   display: flex;
   flex-direction: column;
 }
 
-.select-arrow {
+.selectArrow {
   transition: transform 0.2s ease;
 }
 
-.select-arrow.open {
+.selectArrow.open {
   transform: rotate(180deg);
 }
 
-.select-menu {
+.selectMenu {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -54,7 +54,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.select-item {
+.selectItem {
   padding: 12px;
   cursor: pointer;
   display: flex;
@@ -62,26 +62,26 @@
   gap: 12px;
 }
 
-.select-item:hover {
+.selectItem:hover {
   background-color: #f5f5f5;
 }
 
-.select-item.selected {
+.selectItem.selected {
   background-color: #f0f0f0;
 }
 
-.select-item img {
+.selectItem img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.select-item .item-details span:first-child {
+.selectItem .itemDetails span:first-child {
   font-weight: bold;
 }
 
-.select-item .item-details span:last-child {
+.selectItem .itemDetails span:last-child {
   font-size: 0.9em;
   color: #666;
 }

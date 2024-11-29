@@ -1,8 +1,7 @@
 import React from 'react';
+import styles from '../styles/SelectMonolith.module.css';
 
-import '../styles/SelectMonolith.css';
-
-const SelectMonolith = ({ items }) => {
+function SelectMonolith({ items }) {
     const [isOpen, setIsOpen] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
     const selectRef = React.useRef(null);
@@ -22,7 +21,7 @@ const SelectMonolith = ({ items }) => {
     // Keyboard navigation
     React.useEffect(() => {
         const handleKeyDown = (e) => {
-            if (!isOpen) return;
+            if (!isOpen) return;    
 
             switch (e.key) {
                 case 'Escape':
@@ -57,34 +56,34 @@ const SelectMonolith = ({ items }) => {
     }, [isOpen, items, selectedItem]);
 
     return (
-        <div className="select-container" ref={selectRef}>
+        <div className={styles.selectContainer} ref={selectRef}>
             {/* Trigger/Selected Item Display */}
-            <div className="select-trigger" onClick={() => setIsOpen(!isOpen)}>
+            <div className={styles.selectTrigger} onClick={() => setIsOpen(!isOpen)}>
                 {selectedItem ? (
-                    <div className="selected-item">
+                    <div className={styles.selectedItem}>
                         <img src={selectedItem.image} alt={selectedItem.name} />
                         <span>{selectedItem.name}</span>
                     </div>
                 ) : (
                     <span>Select a person</span>
                 )}
-                <span className="select-arrow">▼</span>
+                <span className={`${styles.selectArrow} ${isOpen ? styles.open : ''}`}>▼</span>
             </div>
 
             {/* Select Menu */}
             {isOpen && (
-                <div className="select-menu">
+                <div className={styles.selectMenu}>
                     {items.map((item) => (
                         <div
                             key={item.id}
-                            className="select-item"
+                            className={`${styles.selectItem} ${selectedItem?.id === item.id ? styles.selected : ''}`}
                             onClick={() => {
                                 setSelectedItem(item);
                                 setIsOpen(false);
                             }}
                         >
                             <img src={item.image} alt={item.name} />
-                            <div className="item-details">
+                            <div className={styles.itemDetails}>
                                 <span>{item.name}</span>
                                 <span>{item.role}</span>
                             </div>
